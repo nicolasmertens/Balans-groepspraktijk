@@ -1,0 +1,90 @@
+            
+@charset "utf-8";
+/* CSS Document */
+@import url("fontface.css");
+
+
+	body.mceContentBody{
+	 font-family: 'Roboto', sans-serif;
+	 color:#898989;
+	 background-color:#fafafa;
+	 font-size:14px;
+	 text-align: justify;	
+	 height: 100%;
+	 width: 100%;
+	 position:relative;
+	}
+	body.mceContentBody h1 {
+		font-size:29px;
+		color:#2d9d3e;	
+		text-align:left;
+		text-transform:uppercase;
+		font-family: 'titilliumregular';
+		font-weight: normal;	
+	} 
+	body.mceContentBody td{
+	   color:#fafafa;
+} 
+h2 {	font-size:25px;
+		color:#2d9d3e;	
+		text-align:left;
+		text-transform:uppercase;
+		font-family: 'titilliumregular';
+		font-weight: normal;
+}
+h3 {    font-size:22px;
+		color:#2d9d3e;	
+		text-align:left;
+		text-transform:uppercase;
+		font-family: 'titilliumregular';
+		font-weight: normal;	
+}
+
+h4 { 	font-size:21px;
+		color:#2d9d3e;	
+		text-align:left;
+		text-transform:uppercase;
+		font-family: 'titilliumregular';
+		font-weight: normal;	
+}
+
+
+.h2 {	font-size:25px;
+		color:#2d9d3e;	
+		text-align:left;
+		text-transform:uppercase;
+		font-family: 'titilliumregular';
+		font-weight: normal;
+}
+.h3 {    font-size:22px;
+		color:#2d9d3e;	
+		text-align:left;
+		text-transform:uppercase;
+		font-family: 'titilliumregular';
+		font-weight: normal;	
+}
+.h4 { 	font-size:21px;
+		color:#2d9d3e;	
+		text-align:left;
+		text-transform:uppercase;
+		font-family: 'titilliumregular';
+		font-weight: normal;	
+}
+
+.strong{
+	font-family: 'Roboto', sans-serif;
+	font-weight:400;
+}
+a, a:link, a:visited{
+        color:#2fa642;	
+    	text-decoration:none;
+		cursor:pointer;
+}
+a:hover{
+	text-decoration: none;
+}
+
+
+
+
+        

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://cdnnen.proxi.tools/assets/Googlemapsv2/styles/placecard.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="http://cdnnen.proxi.tools/res/global/js/leaflet/leaflet.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="http://cdnnen.proxi.tools/res/global/js/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css" type="text/css" media="all"/>
+
+    </head>
+<body class="OpenStreetMap">
+    <div id="map"></div>
+    
+    <script>
+        let map = null;
+        let placecard = "\n        <div class=\"placecard__container\">\n            <div class=\"placecard__left\">\n                <p class=\"placecard__business-name\">Balans Schilde<\/p>\n                <p class=\"placecard__info\">\n                    Steytelincklei 2 <br>\n                    2610 Antwerpen<br><a href=\"mailto:StefanieVanHoutte@hotmail.com\">StefanieVanHoutte@hotmail.com<\/a><br>Gsm : 0497\/40.38.22<br>\n                <\/p>\n            <\/div>\n            <div class=\"placecard__right\">\n                <a class=\"placecard__direction-link\" target=\"_blank\" href=\"https:\/\/maps.google.com\/maps\/dir\/\/Steytelincklei 2, Antwerpen\">\n                    <div class=\"placecard__direction-icon\"><\/div>\n                    Route\n                <\/a>\n            <\/div>\n        <\/div>";
+        let latitude = 51.2358273;
+        let longitude = 4.5738412;
+        let zoom = 15;
+        let mapType = false;
+                let scale = false;
+        
+        
+        function initMap() {
+            
+                            
+                map = L.map('map', {
+                    center: [latitude, longitude],
+                    zoom: zoom,
+                    zoomControl: false,
+                    gestureHandling: true,
+                    attributionControl: false
+                });
+                L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {}).addTo(map);
+                L.marker([latitude, longitude]).addTo(map);
+                if(scale) {
+                    L.control.scale({
+                        position: 'bottomright',
+                        imperial: false
+                    }).addTo(map);
+                }
+                L.control.zoom({
+                    position: 'bottomright',
+                }).addTo(map);
+                
+                                    
+                    L.control.custom({
+                        position: 'topleft',
+                        content: placecard,
+                        classes: 'location-infobox',
+                        /*
+                        style: {
+                            width: '200px',
+                            margin: '10px',
+                            padding: '5px 10px',
+                            background: '#fff',
+                        },
+                         */
+                    }).addTo(map);
+                    
+                                        
+        }
+        
+
+                    window.onload = function(){
+                initMap();
+            };
+        
+    </script>
+            <script type="text/javascript" src="http://cdnnen.proxi.tools/res/global/js/leaflet/leaflet.js"></script>
+<script type="text/javascript" src="http://cdnnen.proxi.tools/res/global/js/leaflet/Leaflet.Control.Custom.js"></script>
+<script type="text/javascript" src="http://cdnnen.proxi.tools/res/global/js/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.js"></script>
+
+    </body>
+</html>
