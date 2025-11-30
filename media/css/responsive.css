@@ -2,21 +2,42 @@
 /* Responsive CSS for Balans Groepspraktijk */
 
 /* =================================================================
-   Base Responsive Styles
+   Critical Overflow Prevention
+   ================================================================= */
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* =================================================================
+   Base Responsive Styles - Override fixed widths
    ================================================================= */
 
 /* Make the container responsive */
 .large-container {
+    width: 100% !important;
     max-width: 1000px;
-    width: 100%;
     padding: 0 15px;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 /* Make header flexible */
 header {
     height: auto;
     min-height: 335px;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 /* Make logo container responsive */
@@ -25,6 +46,7 @@ header {
     max-width: 310px;
     height: auto;
     min-height: 335px;
+    box-sizing: border-box;
 }
 
 /* Make slideshow responsive */
@@ -32,12 +54,21 @@ header {
     width: 100%;
     max-width: 675px;
     height: auto;
+    box-sizing: border-box;
 }
 
-/* Make menu responsive */
+/* Make menu responsive - CRITICAL: Override 1023px fixed width */
 .menu {
-    width: 100%;
+    width: 100% !important;
     max-width: 1023px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+#nav {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* Make boxes responsive */
@@ -45,16 +76,30 @@ header {
     width: 100%;
     max-width: 328px;
     margin-right: 10px;
+    box-sizing: border-box;
+}
+
+.left-box-content {
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
 }
 
 .last-box {
     width: 100%;
     max-width: 632px;
+    box-sizing: border-box;
+}
+
+.news-box p {
+    width: 100%;
+    max-width: 473px;
+    box-sizing: border-box;
 }
 
 /* Make contact section responsive */
 .contact {
-    width: 100%;
+    width: 100% !important;
     max-width: 1000px;
     padding: 50px 20px 85px;
     box-sizing: border-box;
@@ -71,6 +116,27 @@ header {
     width: 100%;
     padding: 25px 15px;
     box-sizing: border-box;
+}
+
+/* Prevent bizbook overflow */
+.bizbook-logo {
+    width: 100%;
+    max-width: 375px;
+    box-sizing: border-box;
+}
+
+#containter_messagesbox,
+#containerMessagesMainDivbox {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* Ensure all images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* =================================================================
@@ -108,32 +174,40 @@ header {
 
 @media screen and (max-width: 1024px) {
     .large-container {
+        width: 100% !important;
         max-width: 100%;
         padding: 0 20px;
     }
 
     header {
         margin-top: 20px;
+        width: 100%;
     }
 
     .logo-container,
     .slideshow {
-        width: 48%;
+        width: 48% !important;
         margin-right: 2%;
+        max-width: 48%;
     }
 
     .slideshow {
-        max-width: 100%;
+        max-width: 48%;
     }
 
     .menu {
+        width: 100% !important;
         max-width: 100%;
     }
 
+    #nav {
+        width: 100%;
+    }
+
     .box {
-        width: 31%;
+        width: 31% !important;
         margin-right: 2%;
-        max-width: none;
+        max-width: 31%;
     }
 
     .box:nth-child(3n) {
@@ -145,6 +219,11 @@ header {
         max-width: 375px;
         margin-right: 0;
     }
+
+    .contact {
+        width: 100% !important;
+        padding: 50px 15px 85px;
+    }
 }
 
 /* =================================================================
@@ -155,9 +234,12 @@ header {
     body {
         background-size: cover;
         background-position: center;
+        overflow-x: hidden !important;
     }
 
     .large-container {
+        width: 100% !important;
+        max-width: 100%;
         padding: 0 10px;
     }
 
@@ -165,11 +247,12 @@ header {
         height: auto;
         margin-top: 15px;
         min-height: auto;
+        width: 100%;
     }
 
     /* Stack logo and slideshow vertically */
     .logo-container {
-        width: 100%;
+        width: 100% !important;
         max-width: 100%;
         height: auto;
         min-height: auto;
@@ -180,6 +263,7 @@ header {
     .logo-content {
         height: auto;
         padding: 20px;
+        width: 100%;
     }
 
     .logo {
@@ -194,7 +278,7 @@ header {
     }
 
     .slideshow {
-        width: 100%;
+        width: 100% !important;
         max-width: 100%;
         height: auto;
         float: none;
@@ -203,20 +287,24 @@ header {
 
     .camera_wrap {
         height: auto !important;
+        width: 100% !important;
     }
 
     /* Mobile Menu Styles */
     .mobile-menu-toggle {
         display: block;
+        width: 100%;
     }
 
     .menu {
         clear: both;
+        width: 100% !important;
     }
 
     #nav {
         display: none;
         margin-top: 0;
+        width: 100%;
     }
 
     #nav.mobile-active {
@@ -225,7 +313,7 @@ header {
 
     #nav li {
         display: block;
-        width: 100%;
+        width: 100% !important;
         margin-right: 0;
         margin-bottom: 2px;
         float: none;
@@ -235,11 +323,12 @@ header {
         display: block;
         padding: 15px 20px;
         text-align: left;
+        width: 100%;
     }
 
     #nav li ul {
         position: static;
-        width: 100%;
+        width: 100% !important;
         margin-top: 0;
         display: none;
     }
@@ -255,6 +344,7 @@ header {
     #nav li li {
         height: auto;
         margin-left: 20px;
+        width: 100% !important;
     }
 
     #nav li li a {
@@ -264,7 +354,7 @@ header {
 
     /* Content boxes */
     .box {
-        width: 100%;
+        width: 100% !important;
         max-width: 100%;
         margin-right: 0;
         margin-bottom: 20px;
@@ -272,11 +362,12 @@ header {
     }
 
     .left-box-content {
-        width: 100%;
+        width: 100% !important;
+        max-width: 100%;
     }
 
     .left-box-content p {
-        width: 100%;
+        width: 100% !important;
         margin-left: 0;
         min-height: auto;
     }
@@ -285,16 +376,23 @@ header {
         float: none;
         display: block;
         margin: 0 auto 15px;
+        max-width: 100%;
     }
 
     .last-box {
-        width: 100%;
+        width: 100% !important;
         max-width: 100%;
         float: none;
     }
 
+    .news-box {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
     .news-box p {
-        width: 100%;
+        width: 100% !important;
+        max-width: 100%;
         margin-left: 0;
     }
 
@@ -303,16 +401,35 @@ header {
         float: none;
         margin: 0 auto 20px;
         text-align: center;
+        max-width: 100%;
     }
 
     /* Home paragraph */
     .home-paragraphe {
         padding: 20px 10px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Content sections */
+    .first-box-content {
+        width: 100% !important;
+        padding: 20px 10px 0;
+    }
+
+    .second-content {
+        width: 100% !important;
+        padding: 15px 10px;
     }
 
     /* Contact section */
     .contact {
+        width: 100% !important;
         padding: 30px 15px 50px;
+    }
+
+    .contact ul {
+        width: 100%;
     }
 
     .contact ul li {
@@ -320,11 +437,17 @@ header {
         display: block;
         margin: 5px 0;
         text-align: center;
+        width: 100%;
+    }
+
+    .contact-container {
+        width: 100% !important;
+        max-width: 100%;
     }
 
     /* Bizbook logo */
     .bizbook-logo {
-        width: 100%;
+        width: 100% !important;
         max-width: 100%;
         float: none;
         margin: 20px auto;
