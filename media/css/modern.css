@@ -152,18 +152,17 @@ nav a.active {
 .hero {
     margin: 2rem 0;
     position: relative;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     max-height: 450px;
-    object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    display: block;
-    margin: 0 auto;
 }
 
 @media (max-width: 768px) {
