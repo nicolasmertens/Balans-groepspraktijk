@@ -1,0 +1,465 @@
+@charset "utf-8";
+/* Responsive CSS for Balans Groepspraktijk */
+
+/* =================================================================
+   Base Responsive Styles
+   ================================================================= */
+
+/* Make the container responsive */
+.large-container {
+    max-width: 1000px;
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* Make header flexible */
+header {
+    height: auto;
+    min-height: 335px;
+}
+
+/* Make logo container responsive */
+.logo-container {
+    width: 100%;
+    max-width: 310px;
+    height: auto;
+    min-height: 335px;
+}
+
+/* Make slideshow responsive */
+.slideshow {
+    width: 100%;
+    max-width: 675px;
+    height: auto;
+}
+
+/* Make menu responsive */
+.menu {
+    width: 100%;
+    max-width: 1023px;
+}
+
+/* Make boxes responsive */
+.box {
+    width: 100%;
+    max-width: 328px;
+    margin-right: 10px;
+}
+
+.last-box {
+    width: 100%;
+    max-width: 632px;
+}
+
+/* Make contact section responsive */
+.contact {
+    width: 100%;
+    max-width: 1000px;
+    padding: 50px 20px 85px;
+    box-sizing: border-box;
+}
+
+/* Make content areas responsive */
+.first-box-content {
+    width: 100%;
+    padding: 30px 20px 0;
+    box-sizing: border-box;
+}
+
+.second-content {
+    width: 100%;
+    padding: 25px 15px;
+    box-sizing: border-box;
+}
+
+/* =================================================================
+   Mobile Menu Toggle Button
+   ================================================================= */
+
+.mobile-menu-toggle {
+    display: none;
+    background-color: #2d9d3e;
+    color: #ffffff;
+    border: none;
+    padding: 15px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-family: 'titilliumregular';
+    text-transform: uppercase;
+    margin-top: 8px;
+}
+
+.mobile-menu-toggle:before {
+    content: "☰ ";
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.mobile-menu-toggle.active:before {
+    content: "✕ ";
+}
+
+/* =================================================================
+   Tablet Styles (768px - 1024px)
+   ================================================================= */
+
+@media screen and (max-width: 1024px) {
+    .large-container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    header {
+        margin-top: 20px;
+    }
+
+    .logo-container,
+    .slideshow {
+        width: 48%;
+        margin-right: 2%;
+    }
+
+    .slideshow {
+        max-width: 100%;
+    }
+
+    .menu {
+        max-width: 100%;
+    }
+
+    .box {
+        width: 31%;
+        margin-right: 2%;
+        max-width: none;
+    }
+
+    .box:nth-child(3n) {
+        margin-right: 0;
+    }
+
+    .bizbook-logo {
+        width: 100%;
+        max-width: 375px;
+        margin-right: 0;
+    }
+}
+
+/* =================================================================
+   Mobile Styles (max-width: 768px)
+   ================================================================= */
+
+@media screen and (max-width: 768px) {
+    body {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .large-container {
+        padding: 0 10px;
+    }
+
+    header {
+        height: auto;
+        margin-top: 15px;
+        min-height: auto;
+    }
+
+    /* Stack logo and slideshow vertically */
+    .logo-container {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: auto;
+        margin-bottom: 15px;
+        float: none;
+    }
+
+    .logo-content {
+        height: auto;
+        padding: 20px;
+    }
+
+    .logo {
+        padding: 20px;
+        padding-top: 20px;
+        max-width: 100%;
+    }
+
+    .logo img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .slideshow {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        float: none;
+        margin-bottom: 15px;
+    }
+
+    .camera_wrap {
+        height: auto !important;
+    }
+
+    /* Mobile Menu Styles */
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .menu {
+        clear: both;
+    }
+
+    #nav {
+        display: none;
+        margin-top: 0;
+    }
+
+    #nav.mobile-active {
+        display: block;
+    }
+
+    #nav li {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 2px;
+        float: none;
+    }
+
+    #nav li a {
+        display: block;
+        padding: 15px 20px;
+        text-align: left;
+    }
+
+    #nav li ul {
+        position: static;
+        width: 100%;
+        margin-top: 0;
+        display: none;
+    }
+
+    #nav li:hover ul {
+        display: none;
+    }
+
+    #nav li.mobile-submenu-open ul {
+        display: block;
+    }
+
+    #nav li li {
+        height: auto;
+        margin-left: 20px;
+    }
+
+    #nav li li a {
+        padding: 12px 20px;
+        height: auto;
+    }
+
+    /* Content boxes */
+    .box {
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        float: none;
+    }
+
+    .left-box-content {
+        width: 100%;
+    }
+
+    .left-box-content p {
+        width: 100%;
+        margin-left: 0;
+        min-height: auto;
+    }
+
+    .box-icon {
+        float: none;
+        display: block;
+        margin: 0 auto 15px;
+    }
+
+    .last-box {
+        width: 100%;
+        max-width: 100%;
+        float: none;
+    }
+
+    .news-box p {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Font size controls */
+    #fontsize {
+        float: none;
+        margin: 0 auto 20px;
+        text-align: center;
+    }
+
+    /* Home paragraph */
+    .home-paragraphe {
+        padding: 20px 10px;
+    }
+
+    /* Contact section */
+    .contact {
+        padding: 30px 15px 50px;
+    }
+
+    .contact ul li {
+        float: none;
+        display: block;
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    /* Bizbook logo */
+    .bizbook-logo {
+        width: 100%;
+        max-width: 100%;
+        float: none;
+        margin: 20px auto;
+    }
+
+    /* Contact form */
+    .contactForm .formItem {
+        width: 100%;
+        float: none;
+        margin-bottom: 15px;
+    }
+
+    form.contactForm .text-input,
+    form.contactForm .contactSelect,
+    form.contactForm .datepicker {
+        width: 100% !important;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    form.contactForm textarea.text-input {
+        width: 100% !important;
+    }
+
+    .id_comments textarea.text-input {
+        width: 100% !important;
+    }
+
+    #paragraph_text-1 {
+        width: 100% !important;
+    }
+
+    .contactForm .formItem.id_paragraph_text_1 {
+        width: 100%;
+    }
+
+    /* Bizbook slider navigation */
+    #slidenav #prevBtn {
+        left: 10px;
+    }
+
+    #slidenav #nextBtn {
+        right: 10px;
+    }
+}
+
+/* =================================================================
+   Small Mobile Styles (max-width: 480px)
+   ================================================================= */
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 17px;
+    }
+
+    .large-container {
+        padding: 0 5px;
+    }
+
+    .logo-container {
+        padding: 10px;
+    }
+
+    .logo-content {
+        margin: 5px;
+        padding: 15px;
+    }
+
+    .logo {
+        padding: 15px;
+    }
+
+    .home-paragraphe {
+        padding: 15px 5px;
+    }
+
+    .contact {
+        padding: 20px 10px 40px;
+    }
+
+    .contact h1 {
+        padding-bottom: 20px;
+    }
+
+    #fontsize {
+        margin-right: auto;
+        width: auto;
+    }
+
+    #nav li a {
+        padding: 12px 15px;
+        font-size: 12px;
+    }
+
+    .box h1,
+    .last-box h1 {
+        font-size: 16px;
+    }
+}
+
+/* =================================================================
+   Print Styles
+   ================================================================= */
+
+@media print {
+    .mobile-menu-toggle,
+    #fontsize,
+    #slidenav,
+    .menu,
+    footer {
+        display: none;
+    }
+
+    .large-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    body {
+        background: none;
+    }
+}
