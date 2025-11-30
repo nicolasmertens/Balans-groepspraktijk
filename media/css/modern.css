@@ -1,0 +1,243 @@
+@import url("fontface.css");
+
+:root {
+    --primary-color: #2d9d3e;
+    --secondary-color: #2fa642;
+    --dark-green: #1a6600;
+    --text-color: #898989;
+    --heading-color: #2d9d3e;
+    --bg-color: #fafafa;
+    --white: #ffffff;
+    --grey-light: #ededed;
+    --grey-dark: #323232;
+
+    --font-main: 'Roboto', sans-serif;
+    --font-heading: 'titilliumregular', sans-serif;
+
+    --container-width: 1200px;
+    --spacing-unit: 1rem;
+}
+
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--dark-green);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+/* Layout Utilities */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-unit);
+    width: 100%;
+}
+
+.grid {
+    display: grid;
+    gap: var(--spacing-unit);
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.justify-text {
+    text-align: justify;
+}
+
+/* Header */
+header {
+    background-color: var(--white);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--grey-light);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo img {
+    max-height: 80px;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #666;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Mobile Menu Toggle (Hidden by default) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero / Slider Section */
+.hero {
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Content Sections */
+.main-content {
+    padding: 2rem 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card img {
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* Footer */
+footer {
+    background-color: var(--grey-light);
+    padding: 2rem 0;
+    margin-top: 3rem;
+    text-align: center;
+    color: #666;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .logo {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .logo img {
+        margin: 0 auto;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        /* Hidden on mobile by default */
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav a {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+}
