@@ -156,7 +156,6 @@ nav a.active {
 .hero {
     width: 100%;
     position: relative;
-    /* Removed fixed height to allow image to define aspect ratio */
     overflow: hidden;
 }
 
@@ -171,7 +170,21 @@ nav a.active {
     width: 100%;
     height: auto;
     object-fit: cover;
-    /* Ensure image covers the area */
+}
+
+/* Tablet Landscape Specific Fix */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+    .hero {
+        height: 400px;
+        /* Limit height to keep content above fold */
+    }
+
+    .hero img {
+        height: 100%;
+        /* Force image to fill the limited height */
+        object-position: center 75%;
+        /* Focus on the lower part (table) */
+    }
 }
 
 /* Optional: Add overlay if needed for text readability */
@@ -184,7 +197,6 @@ nav a.active {
     bottom: 0;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(250, 250, 250, 0.3) 100%);
     pointer-events: none;
-    /* Allow clicking through the overlay */
 }
 
 /* Therapist Info Section */
