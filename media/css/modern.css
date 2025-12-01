@@ -158,8 +158,8 @@ nav a.active {
     height: 450px;
     /* Increased height */
     position: relative;
-    background-image: url('../images/hero-desktop.png');
-    /* New desktop image */
+    background-image: url('../images/hero-desktop-large.png');
+    /* Default: Large Desktop */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -176,11 +176,21 @@ nav a.active {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(250, 250, 250, 0.3) 100%);
 }
 
+/* Tablet (Portrait) & Smaller Laptops */
+@media (max-width: 1024px) {
+    .hero {
+        background-image: url('../images/hero-tablet-portrait.png');
+        background-attachment: scroll;
+        /* Better performance on tablets */
+        background-position: center center;
+    }
+}
+
+/* Mobile (Portrait) */
 @media (max-width: 768px) {
     .hero {
         height: 350px;
-        background-image: url('../images/hero-mobile.png');
-        /* New mobile image */
+        background-image: url('../images/hero-mobile-portrait.png');
         background-attachment: scroll;
         background-position: center bottom;
     }
