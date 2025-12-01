@@ -152,20 +152,29 @@ nav a.active {
     cursor: pointer;
 }
 
-/* Hero / Parallax Section */
+/* Hero Section */
 .hero {
     width: 100%;
-    height: 450px;
-    /* Increased height */
     position: relative;
-    background-image: url('../images/hero-desktop-large.png');
-    /* Default: Large Desktop */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    /* Removed fixed height to allow image to define aspect ratio */
+    overflow: hidden;
 }
 
+.hero picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* Ensure image covers the area */
+}
+
+/* Optional: Add overlay if needed for text readability */
 .hero::before {
     content: '';
     position: absolute;
@@ -174,26 +183,8 @@ nav a.active {
     right: 0;
     bottom: 0;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(250, 250, 250, 0.3) 100%);
-}
-
-/* Tablet (Portrait) & Smaller Laptops */
-@media (max-width: 1024px) {
-    .hero {
-        background-image: url('../images/hero-tablet-portrait.png');
-        background-attachment: scroll;
-        /* Better performance on tablets */
-        background-position: center center;
-    }
-}
-
-/* Mobile (Portrait) */
-@media (max-width: 768px) {
-    .hero {
-        height: 350px;
-        background-image: url('../images/hero-mobile-portrait.png');
-        background-attachment: scroll;
-        background-position: center bottom;
-    }
+    pointer-events: none;
+    /* Allow clicking through the overlay */
 }
 
 /* Therapist Info Section */

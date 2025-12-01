@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="media/images/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="media/images/apple-touch-icon.png">
 
-    <link rel="stylesheet" href="media/css/modern.css?v=1.3">
+    <link rel="stylesheet" href="media/css/modern.css?v=1.4">
 </head>
 
 <body>
@@ -39,7 +39,26 @@
         </div>
     </header>
 
-    <div class="hero"></div>
+    <div class="hero">
+        <picture>
+            <!-- Mobile Portrait (up to 480px) -->
+            <source media="(max-width: 480px)" srcset="media/images/hero-mobile-portrait.png">
+
+            <!-- Tablet Portrait (up to 768px) -->
+            <source media="(max-width: 768px)" srcset="media/images/hero-tablet-portrait.png">
+
+            <!-- Tablet Landscape (up to 1024px) -->
+            <source media="(max-width: 1024px) and (orientation: landscape)"
+                srcset="media/images/hero-tablet-landscape.png">
+
+            <!-- Tablet Portrait Large (up to 1024px) -->
+            <source media="(max-width: 1024px)" srcset="media/images/hero-tablet-portrait.png">
+
+            <!-- Desktop (Default) -->
+            <img src="media/images/hero-desktop-large.png" alt="Balans Groepspraktijk - Welkom" width="1920"
+                height="1080">
+        </picture>
+    </div>
 
     <main class="container main-content">
         <div class="center-text">
