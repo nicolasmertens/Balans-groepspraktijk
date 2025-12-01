@@ -155,7 +155,8 @@ nav a.active {
     position: relative;
     background-image: url('../images/hero-parallax.png');
     background-attachment: fixed;
-    background-position: center;
+    background-position: center bottom;
+    /* Focus on the bottom part (table/toys) */
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -257,7 +258,8 @@ footer {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+/* Changed breakpoint to 1024px to include tablets (iPad) in mobile menu */
+@media (max-width: 1024px) {
     .header-inner {
         flex-direction: column;
         align-items: stretch;
