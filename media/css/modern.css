@@ -15,7 +15,8 @@
     --font-heading: 'titilliumregular', sans-serif;
 
     --container-width: 1200px;
-    --spacing-unit: 1rem;
+    --spacing-unit: 2rem;
+    /* Increased margin for readability */
 }
 
 /* Reset & Base Styles */
@@ -129,8 +130,11 @@ nav ul {
 nav a {
     color: #666;
     font-weight: 500;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.8rem;
+    /* Slightly reduced padding */
     border-radius: 4px;
+    font-size: 15px;
+    /* Slightly reduced font size for better fit */
 }
 
 nav a:hover,
@@ -151,12 +155,13 @@ nav a.active {
 /* Hero / Parallax Section */
 .hero {
     width: 100%;
-    height: 400px;
+    height: 450px;
+    /* Increased height */
     position: relative;
-    background-image: url('../images/hero-parallax.png');
+    background-image: url('../images/hero-desktop.png');
+    /* New desktop image */
     background-attachment: fixed;
-    background-position: center bottom;
-    /* Focus on the bottom part (table/toys) */
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -173,8 +178,11 @@ nav a.active {
 
 @media (max-width: 768px) {
     .hero {
-        height: 250px;
+        height: 350px;
+        background-image: url('../images/hero-mobile.png');
+        /* New mobile image */
         background-attachment: scroll;
+        background-position: center bottom;
     }
 }
 
@@ -258,8 +266,8 @@ footer {
 }
 
 /* Responsive Adjustments */
-/* Changed breakpoint to 1024px to include tablets (iPad) in mobile menu */
-@media (max-width: 1024px) {
+/* Only switch to burger menu on smaller screens (< 992px) */
+@media (max-width: 992px) {
     .header-inner {
         flex-direction: column;
         align-items: stretch;
@@ -285,7 +293,6 @@ footer {
         flex-direction: column;
         width: 100%;
         display: none;
-        /* Hidden on mobile by default */
     }
 
     nav ul.show {
@@ -296,5 +303,7 @@ footer {
         display: block;
         text-align: center;
         width: 100%;
+        padding: 1rem;
+        border-bottom: 1px solid var(--grey-light);
     }
 }
