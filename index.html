@@ -10,7 +10,26 @@
     <link rel="icon" type="image/png" sizes="32x32" href="media/images/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="media/images/apple-touch-icon.png">
 
-    <link rel="stylesheet" href="media/css/modern.css?v=1.6">
+    <!-- Preload critical hero images -->
+    <link rel="preload" as="image" href="media/images/hero-mobile-portrait.webp" media="(max-width: 768px)"
+        fetchpriority="high">
+    <link rel="preload" as="image" href="media/images/hero-desktop-large.webp" media="(min-width: 769px)"
+        fetchpriority="high">
+
+    <!-- WebP detection -->
+    <script>
+        (function () {
+            var webP = new Image();
+            webP.onload = webP.onerror = function () {
+                if (webP.height != 2) {
+                    document.documentElement.className += ' no-webp';
+                }
+            };
+            webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+        })();
+    </script>
+
+    <link rel="stylesheet" href="media/css/modern.css?v=1.7">
 </head>
 
 <body>
@@ -49,7 +68,7 @@
             <p><strong><span style="color: var(--dark-green);">Oudestraat 53, 2610 Antwerpen-Wilrijk</span></strong></p>
 
             <div class="therapist-section">
-                <h3>INFO?</h3>
+                <h2>INFO?</h2>
                 <div class="therapist-grid">
                     <div>
                         <p><strong>Stefanie Van Houtte - Logopediste</strong></p>
@@ -67,7 +86,7 @@
             </div>
 
             <div style="margin-top: 2rem; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <h3>U kan bij Balans terecht voor:</h3>
+                <h2>U kan bij Balans terecht voor:</h2>
 
                 <div style="margin-bottom: 1rem;">
                     <h4>Logopedie</h4>

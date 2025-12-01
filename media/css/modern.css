@@ -139,7 +139,7 @@ nav a {
 
 nav a:hover,
 nav a.active {
-    background-color: var(--primary-color);
+    background-color: #1a6600;
     color: var(--white);
 }
 
@@ -157,11 +157,16 @@ nav a.active {
     width: 100%;
     height: 450px;
     position: relative;
-    background-image: url('../images/hero-desktop-large.png');
+    background-image: url('../images/hero-desktop-large.webp');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+/* PNG fallback for browsers that don't support WebP */
+.no-webp .hero {
+    background-image: url('../images/hero-desktop-large.png');
 }
 
 .hero::before {
@@ -178,9 +183,13 @@ nav a.active {
 @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
     .hero {
         height: 400px;
-        background-image: url('../images/hero-tablet-landscape.png');
+        background-image: url('../images/hero-tablet-landscape.webp');
         background-attachment: scroll;
         background-position: center;
+    }
+
+    .no-webp .hero {
+        background-image: url('../images/hero-tablet-landscape.png');
     }
 }
 
@@ -188,9 +197,13 @@ nav a.active {
 @media (max-width: 768px) {
     .hero {
         height: 350px;
-        background-image: url('../images/hero-mobile-portrait.png');
+        background-image: url('../images/hero-mobile-portrait.webp');
         background-attachment: scroll;
         background-position: center bottom;
+    }
+
+    .no-webp .hero {
+        background-image: url('../images/hero-mobile-portrait.png');
     }
 }
 
@@ -215,6 +228,16 @@ nav a.active {
     background: var(--white);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.therapist-grid strong,
+.therapist-grid p,
+.therapist-grid a {
+    color: #1a1a1a;
+}
+
+.therapist-grid a:hover {
+    color: var(--dark-green);
 }
 
 @media (max-width: 768px) {
