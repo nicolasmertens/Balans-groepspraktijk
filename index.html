@@ -10,11 +10,18 @@
     <link rel="icon" type="image/png" sizes="32x32" href="media/images/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="media/images/apple-touch-icon.png">
 
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <!-- Preload critical hero images -->
     <link rel="preload" as="image" href="media/images/hero-mobile-portrait.webp" media="(max-width: 768px)"
         fetchpriority="high">
     <link rel="preload" as="image" href="media/images/hero-desktop-large.webp" media="(min-width: 769px)"
         fetchpriority="high">
+
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="media/css/modern.css?v=1.7" as="style">
 
     <!-- WebP detection -->
     <script>
@@ -29,7 +36,15 @@
         })();
     </script>
 
+    <!-- Critical CSS loaded synchronously -->
     <link rel="stylesheet" href="media/css/modern.css?v=1.7">
+
+    <!-- Defer non-critical font loading -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap">
+    </noscript>
 </head>
 
 <body>
